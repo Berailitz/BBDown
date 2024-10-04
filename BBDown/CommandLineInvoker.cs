@@ -38,6 +38,7 @@ namespace BBDown
         private readonly static Option<bool> SkipCover = new(new string[] { "--skip-cover" }, "跳过封面下载");
         private readonly static Option<bool> ForceHttp = new(new string[] { "--force-http" }, "下载音视频时强制使用HTTP协议替换HTTPS(默认开启)");
         private readonly static Option<bool> DownloadDanmaku = new(new string[] { "--download-danmaku", "-dd" }, "下载弹幕");
+        private readonly static Option<int> DanmakuAlpha = new(new string[] { "--danmaku-alpha", "-da" }, "弹幕透明度(0至100，默认为0，不透明)");
         private readonly static Option<bool> SkipAi = new(new string[] { "--skip-ai" }, description: "跳过AI字幕下载(默认开启)");
         private readonly static Option<bool> VideoAscending = new(new string[] { "--video-ascending" }, "视频升序(最小体积优先)");
         private readonly static Option<bool> AudioAscending = new(new string[] { "--audio-ascending" }, "音频升序(最小体积优先)");
@@ -123,6 +124,7 @@ namespace BBDown
                 if (bindingContext.ParseResult.HasOption(SkipCover)) option.SkipCover = bindingContext.ParseResult.GetValueForOption(SkipCover)!;
                 if (bindingContext.ParseResult.HasOption(ForceHttp)) option.ForceHttp = bindingContext.ParseResult.GetValueForOption(ForceHttp)!;
                 if (bindingContext.ParseResult.HasOption(DownloadDanmaku)) option.DownloadDanmaku = bindingContext.ParseResult.GetValueForOption(DownloadDanmaku)!;
+                if (bindingContext.ParseResult.HasOption(DanmakuAlpha)) option.DanmakuAlpha = bindingContext.ParseResult.GetValueForOption(DanmakuAlpha)!;
                 if (bindingContext.ParseResult.HasOption(SkipAi)) option.SkipAi = bindingContext.ParseResult.GetValueForOption(SkipAi)!;
                 if (bindingContext.ParseResult.HasOption(VideoAscending)) option.VideoAscending = bindingContext.ParseResult.GetValueForOption(VideoAscending)!;
                 if (bindingContext.ParseResult.HasOption(AudioAscending)) option.AudioAscending = bindingContext.ParseResult.GetValueForOption(AudioAscending)!;
@@ -186,6 +188,7 @@ namespace BBDown
                 SkipCover,
                 ForceHttp,
                 DownloadDanmaku,
+                DanmakuAlpha,
                 SkipAi,
                 VideoAscending,
                 AudioAscending,

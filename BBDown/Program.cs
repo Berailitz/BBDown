@@ -559,7 +559,7 @@ namespace BBDown
                         if (danmakus != null)
                         {
                             Log("正在保存弹幕Ass文件...");
-                            await DanmakuUtil.SaveAsAssAsync(danmakus, danmakuAssPath);
+                            await DanmakuUtil.SaveAsAssAsync(danmakus, danmakuAssPath, myOption.DanmakuAlpha);
                         }
                         else
                         {
@@ -734,7 +734,7 @@ namespace BBDown
                         if (danmakus != null)
                         {
                             Log("正在保存弹幕Ass文件...");
-                            await DanmakuUtil.SaveAsAssAsync(danmakus, danmakuAssPath);
+                            await DanmakuUtil.SaveAsAssAsync(danmakus, danmakuAssPath, myOption.DanmakuAlpha);
                         }
                         else
                         {
